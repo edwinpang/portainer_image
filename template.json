@@ -163,6 +163,115 @@
 			"volumes": [{
 				"container": "/var/jenkins_home"
 			}]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A web interface for managing docker containers with an emphasis on templating to provide 1 click deployments. Think of it like a decentralized app store for servers that anyone can make packages for.",
+			"image": "selfhostedpro/yacht:latest",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/Yacht/master/readme_media/Yacht_logo_1_dark.png",
+			"name": "yacht",
+			"platform": "linux",
+			"ports": [
+				"8001:8000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Yacht",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "yacht",
+					"container": "/config"
+				},
+				{
+					"bind": "/var/run/docker.sock",
+					"container": "/var/run/docker.sock"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"VPN",
+				"Tools"
+			],
+			"description": "This container contains OpenVPN and Deluge with a configuration where Deluge is running only when OpenVPN has an active tunnel. It bundles configuration files for many popular VPN providers to make the setup easier.",
+			"env": [
+				{
+					"default": "1001",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1001",
+					"label": "PGID",
+					"name": "PUID"
+				},
+				{
+					"default": "MULLVAD",
+					"description": "see https://github.com/sgtsquiggs/docker-deluge-openvpn",
+					"label": "OPENVPN_PROVIDER",
+					"name": "OPENVPN_PROVIDER"
+				},
+				{
+					"label": "OPENVPN_USERNAME",
+					"name": "OPENVPN_USERNAME"
+				},
+				{
+					"label": "OPENVPN_PASSWORD",
+					"name": "OPENVPN_PASSWORD"
+				}
+			],
+			"image": "sgtsquiggs/deluge-openvpn:latest",
+			"name": "deluge-openvpn",
+			"platform": "linux",
+			"ports": [
+				"8112:8112/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Deluge openvpn",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/etc/localtime",
+					"container": "/etc/localtime"
+				},
+				{
+					"bind": "/portainer/Downloads",
+					"container": "/downloads"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/DelugeOpenVPN/config",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Proxy",
+				"Tools"
+			],
+			"description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+			"image": "jlesage/nginx-proxy-manager",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/proxy_mgr.png",
+			"name": "nginx-proxy-manager",
+			"platform": "linux",
+			"ports": [
+				"80:8080/tcp",
+				"81:8181/tcp",
+				"443:4443/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Nginx Proxy Manager",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Nginx-Proxy",
+					"container": "/config"
+				}
+			]
 		}
 	]
 }
