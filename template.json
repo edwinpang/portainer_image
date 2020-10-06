@@ -9,7 +9,7 @@
 				"docker"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/registry.png",
 			"image": "registry:latest",
 			"ports": [
 				"5000/tcp"
@@ -26,7 +26,7 @@
 				"webserver"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nginx.png",
 			"image": "nginx:latest",
 			"ports": [
 				"80/tcp",
@@ -48,7 +48,7 @@
 				"webserver"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/httpd.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
 			"image": "httpd:latest",
 			"ports": [
 				"80/tcp"
@@ -65,7 +65,7 @@
 				"database"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mysql.png",
 			"image": "mysql:latest",
 			"env": [{
 				"name": "MYSQL_ROOT_PASSWORD",
@@ -86,7 +86,7 @@
 				"database"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mariadb.png",
 			"image": "mariadb:latest",
 			"env": [{
 				"name": "MYSQL_ROOT_PASSWORD",
@@ -107,7 +107,7 @@
 				"database"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/postgres.png",
 			"image": "postgres:latest",
 			"env": [{
 					"name": "POSTGRES_USER",
@@ -133,7 +133,7 @@
 				"database"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mongo.png",
 			"image": "mongo:latest",
 			"ports": [
 				"27017/tcp"
@@ -150,7 +150,7 @@
 				"continuous-integration"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/jenkins.png",
 			"image": "jenkins/jenkins:lts",
 			"ports": [
 				"8080/tcp",
@@ -171,7 +171,7 @@
 			],
 			"description": "A web interface for managing docker containers with an emphasis on templating to provide 1 click deployments. Think of it like a decentralized app store for servers that anyone can make packages for.",
 			"image": "selfhostedpro/yacht:latest",
-			"logo": "https://raw.githubusercontent.com/SelfhostedPro/Yacht/master/readme_media/Yacht_logo_1_dark.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/Yacht_logo_1_dark.png",
 			"name": "yacht",
 			"platform": "linux",
 			"ports": [
@@ -269,6 +269,47 @@
 			"volumes": [
 				{
 					"bind": "/portainer/Files/AppData/Config/Nginx-Proxy",
+					"container": "/config"
+				}
+			]
+		},{
+			"categories": [
+				"VPN",
+				"Tools"
+			],
+			"description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
+			"env": [
+				{
+					"label": "INTERFACE",
+					"name": "INTERFACE",
+					"set": "eth0"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "linuxserver/openvpn-as:latest",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/openvpn-as-icon.png",
+			"name": "openvpn-as",
+			"platform": "linux",
+			"ports": [
+				"943:943/tcp",
+				"9443:9443/tcp",
+				"1194:1194/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "OpenVPN Access Server",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/OpenVPN-AS",
 					"container": "/config"
 				}
 			]
