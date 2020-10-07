@@ -314,6 +314,24 @@
 					"container": "/config"
 				}
 			]
+		},
+		{
+			"type": 1,
+			"title": "sqlsrv_image-php7.3",
+			"description": "Open-source HTTP server with php7.3",
+			"categories": [
+				"webserver"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
+			"image": "edwinpang0205/php7.3-sqlsrv-apache",
+			"ports": [
+				"80/tcp"
+			],
+			"volumes": [{
+				"bind":"/var/www/sqlsrv_image-php7.3",
+				"container": "/var/www/html"
+			}]
 		}
 	]
 }
