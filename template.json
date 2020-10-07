@@ -317,7 +317,7 @@
 		},
 		{
 			"type": 1,
-			"title": "sqlsrv_image-php7.3",
+			"title": "PHP7.3 with Httpd",
 			"description": "Open-source HTTP server with php7.3",
 			"categories": [
 				"webserver"
@@ -326,10 +326,11 @@
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
 			"image": "edwinpang0205/php7.3-sqlsrv-apache",
 			"ports": [
-				"80/tcp"
+				"80/tcp",
+				"443/tcp"
 			],
 			"volumes": [{
-				"bind":"/var/www/sqlsrv_image-php7.3",
+				"bind":"/var/www/php-httpd",
 				"container": "/var/www/html"
 			}]
 		}
