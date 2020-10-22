@@ -396,20 +396,21 @@
 				{
 					"label": "NFS_EXPORT_DIR_1",
 					"name": "NFS_EXPORT_DIR_1",
-					"set": "/nfs"
+					"default": "/nfs"
 				},
 				{
 					"label": "NFS_EXPORT_DOMAIN_1",
-					"name": "NFS_EXPORT_DOMAIN_1"
+					"name": "NFS_EXPORT_DOMAIN_1",
+					"default" : "\\*"
 				},
 				{
 					"label": "NFS_EXPORT_OPTIONS_1",
 					"name": "NFS_EXPORT_OPTIONS_1",
-					"set": "rw,insecure,no_subtree_check,no_root_squash,fsid=1"
+					"default": "rw,insecure,no_subtree_check,no_root_squash,fsid=1"
 				}
 			],
 			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nfs.png",
 			"image": "fuzzle/docker-nfs-server:latest",
 			"ports": [
 				"111:111/tcp",
