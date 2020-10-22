@@ -401,7 +401,7 @@
 				{
 					"label": "NFS_EXPORT_DOMAIN_1",
 					"name": "NFS_EXPORT_DOMAIN_1",
-					"set": "\b*"
+					"set": "\\*"
 				},
 				{
 					"label": "NFS_EXPORT_OPTIONS_1",
