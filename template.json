@@ -400,8 +400,7 @@
 				},
 				{
 					"label": "NFS_EXPORT_DOMAIN_1",
-					"name": "NFS_EXPORT_DOMAIN_1",
-					"set": "\\*"
+					"name": "NFS_EXPORT_DOMAIN_1"
 				},
 				{
 					"label": "NFS_EXPORT_OPTIONS_1",
