@@ -401,13 +401,13 @@
 				{
 					"label": "NFS_EXPORT_DOMAIN_1",
 					"name": "NFS_EXPORT_DOMAIN_1",
-					"set": "\*"
+					"set": "\b*"
 				},
 				{
 					"label": "NFS_EXPORT_OPTIONS_1",
 					"name": "NFS_EXPORT_OPTIONS_1",
 					"set": "rw,insecure,no_subtree_check,no_root_squash,fsid=1"
-				},
+				}
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
@@ -422,7 +422,7 @@
 				"32766:32766/tcp",
 				"32766:32766/udp",
 				"32767:32767/tcp",
-				"32767:32767/udp",
+				"32767:32767/udp"
 			],
 			"volumes": [{
 				"bind":"/var/nfs",
