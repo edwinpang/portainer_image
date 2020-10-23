@@ -415,7 +415,7 @@
 				{
 					"label": "DB_DUMP_TARGET",
 					"name": "DB_DUMP_TARGET",
-					"default": "/db/database_name/YYYY-MM-DD_HH:mm:ss.gzip"
+					"default": "/db/database_name"
 				},
 				{
 					"label": "DB_SERVER",
