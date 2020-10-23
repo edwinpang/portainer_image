@@ -465,7 +465,10 @@
 					"name": "PMA_PORT",
 					"description":"define port of the MySQL server"
 				}
-			]
+			],
+			"ports": [
+				"8080:80/tcp"
+			],
 		}
 	]
 }
