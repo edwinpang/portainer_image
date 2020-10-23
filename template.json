@@ -443,6 +443,29 @@
 					"description":"DB Name, Empty will dump all the databases"
 				}
 			]
+		},
+		{
+			"type": 1,
+			"title": "PhpMyAdmin",
+			"description": "",
+			"categories": [
+				"sql"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/phpmyadmin.png",
+			"image": "phpmyadmin/phpmyadmin",
+			"env": [
+				{
+					"label": "PMA_HOST",
+					"name": "PMA_HOST",
+					"description":"define address/host name of the MySQL server"
+				},
+				{
+					"label": "PMA_PORT",
+					"name": "PMA_PORT",
+					"description":"define port of the MySQL server"
+				}
+			]
 		}
 	]
 }
