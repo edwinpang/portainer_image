@@ -165,6 +165,28 @@
 			}]
 		},
 		{
+			"type": 1,
+			"title": "Jenkins-2.249.1",
+			"description": "Open-source continuous integration tool",
+			"categories": [
+				"continuous-integration"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/jenkins.png",
+			"image": "jenkins/jenkins:2.249.1-lts",
+			"ports": [
+				"8080/tcp",
+				"50000/tcp"
+			],
+			"env": [{
+				"name": "JENKINS_OPTS",
+				"label": "Jenkins options"
+			}],
+			"volumes": [{
+				"container": "/var/jenkins_home"
+			}]
+		},
+		{
 			"categories": [
 				"Other",
 				"Tools"
