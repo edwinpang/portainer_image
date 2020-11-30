@@ -513,7 +513,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/ssms.png",
-			"image": "docker pull mcr.microsoft.com/mssql/server:2019-latest",
+			"image": "mcr.microsoft.com/mssql/server:2019-latest",
 			"env": [
 				{
 					"label": "ACCEPT_EULA",
@@ -541,7 +541,11 @@
 			],
 			"ports": [
 				"1433:1433/tcp"
-			]
+			],
+			"volumes": [{
+				"bind":"/portainer/mssql-2019/data",
+				"container": "/var/opt/mssql/data"
+			}]
 		}
 	]
 }
