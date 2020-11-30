@@ -503,6 +503,45 @@
 			"ports": [
 				"8080:80/tcp"
 			]
+		},
+		{
+			"type": 1,
+			"title": "MSSQL-2019-latest",
+			"description": "https://hub.docker.com/_/microsoft-mssql-server?tab=description",
+			"categories": [
+				"sql"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/ssms.png",
+			"image": "docker pull mcr.microsoft.com/mssql/server:2019-latest",
+			"env": [
+				{
+					"label": "ACCEPT_EULA",
+					"name": "ACCEPT_EULA",
+					"description":"ACCEPT_EULA",
+					"default":"Y"
+				},
+				{
+					"label": "SA_PASSWORD",
+					"name": "SA_PASSWORD",
+					"description":"Password",
+					"default":""
+				},
+				{
+					"label": "MSSQL_PID",
+					"name": "MSSQL_PID",
+					"description":"<your_product_id | edition_name> (default: Developer)",
+					"default":""
+				},
+				{
+					"label": "MSSQL_AGENT_ENABLED",
+					"name": "MSSQL_AGENT_ENABLED",
+					"default":"TRUE"
+				}
+			],
+			"ports": [
+				"1433:1433/tcp"
+			]
 		}
 	]
 }
