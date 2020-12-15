@@ -437,7 +437,7 @@
 				{
 					"label": "DB_DUMP_TARGET",
 					"name": "DB_DUMP_TARGET",
-					"default": "/db/database_name"
+					"default": "/db"
 				},
 				{
 					"label": "DB_SERVER",
