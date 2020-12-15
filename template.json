@@ -66,7 +66,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mysql.png",
-			"image": "mysql:latest",
+			"image": "jypsolution/mysql-8.0.22",
 			"env": [{
 					"name": "MYSQL_ROOT_PASSWORD",
 					"label": "Root password"
@@ -428,24 +428,12 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mysql.png",
-			"image": "databack/mysql-backup",
+			"image": "jypsolution/mysql-backup",
 			"volumes": [{
 				"bind":"/var/db_backup",
 				"container": "/db"
 			}],
 			"env": [
-				{
-					"label": "DB_DUMP_FREQ",
-					"name": "DB_DUMP_FREQ",
-					"description":"Minutes",
-					"default": "60"
-				},
-				{
-					"label": "DB_DUMP_BEGIN",
-					"name": "DB_DUMP_BEGIN",
-					"description":"Absolute: HHMM, e.g. 2330 or 0415, Relative: +MM, i.e. how many minutes after starting the container, e.g. +0 (immediate), +10 (in 10 minutes), or +90 in an hour and a half",
-					"default": "+0"
-				},
 				{
 					"label": "DB_DUMP_TARGET",
 					"name": "DB_DUMP_TARGET",
@@ -454,7 +442,7 @@
 				{
 					"label": "DB_SERVER",
 					"name": "DB_SERVER",
-					"description":"Server Hostname e.g localhost"
+					"description":"Server Hostname e.g localhost/ip/container-name"
 				},
 				{
 					"label": "DB_PORT",
@@ -475,6 +463,11 @@
 					"label": "DB_NAMES",
 					"name": "DB_NAMES",
 					"description":"DB Name, Empty will dump all the databases"
+				},
+				{
+					"label": "DB_DUMP_CRON",
+					"name": "DB_DUMP_CRON",
+					"description":"Set the dump schedule using standard crontab syntax, a single line."
 				}
 			]
 		},
