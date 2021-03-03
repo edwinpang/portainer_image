@@ -506,7 +506,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/ssms.png",
-			"image": "mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-16.04",
+			"image": "mcr.microsoft.com/mssql/server:2019-CU6-ubuntu-16.04",
 			"env": [
 				{
 					"label": "ACCEPT_EULA",
