@@ -27,6 +27,28 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nginx.png",
+			"image": "wyveo/nginx-php-fpm:php73",
+			"ports": [
+				"80/tcp",
+				"443/tcp"
+			],
+			"volumes": [{
+					"container": "/etc/nginx"
+				},
+				{
+					"container": "/usr/share/nginx/html"
+				}
+			]
+		},
+		{
+			"type": 1,
+			"title": "Nginx-PHP73-FPM",
+			"description": "High performance web server",
+			"categories": [
+				"webserver"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nginx.png",
 			"image": "nginx:latest",
 			"ports": [
 				"80/tcp",
