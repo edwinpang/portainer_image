@@ -27,7 +27,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nginx.png",
-			"image": "wyveo/nginx-php-fpm:php73",
+			"image": "nginx:latest",
 			"ports": [
 				"80/tcp",
 				"443/tcp"
@@ -49,7 +49,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/nginx.png",
-			"image": "nginx:latest",
+			"image": "wyveo/nginx-php-fpm:php73",
 			"ports": [
 				"80/tcp",
 				"443/tcp"
