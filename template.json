@@ -562,7 +562,7 @@
 					"label": "SA_PASSWORD",
 					"name": "SA_PASSWORD",
 					"description":"Password",
-					"default":"wNpXEyLeJvqeatfa"
+					"default":""
 				},
 				{
 					"label": "MSSQL_PID",
