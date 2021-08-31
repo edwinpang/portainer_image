@@ -178,6 +178,53 @@
 		},
 		{
 			"type": 1,
+			"title": "tiredofit/mongodb-backup",
+			"description": "tiredofit/mongodb-backup",
+			"categories": [
+				"database"
+			],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mongo.png",
+			"image": "tiredofit/mongodb-backup:latest",
+			"volumes": [{
+				"container": "/backups"
+			}],
+			"env": [
+				{
+					"label": "DB_HOST",
+					"name": "DB_HOST",
+					"description":"Server Hostname e.g localhost/ip"
+				},
+				{
+					"label": "DB_PORT",
+					"name": "DB_PORT",
+					"description":"mongo default port: 27017"
+				},
+				{
+					"label": "DB_USER",
+					"name": "DB_USER",
+					"description":"DB Username"
+				},
+				{
+					"label": "DB_PASS",
+					"name": "DB_PASS",
+					"description":"DB Password"
+				},
+				{
+					"label": "DB_DUMP_FREQ",
+					"name": "DB_DUMP_FREQ",
+					"description":"How often to do a dump, in minutes. Defaults to 1440 minutes, or once per day."
+				},
+				{
+					"label": "DB_CLEANUP_TIME",
+					"name": "DB_CLEANUP_TIME",
+					"default":"1440",
+					"description":"How often to do a clean up, in minutes. Defaults to 1440 minutes, or once per day."
+				}
+			]
+		},
+		{
+			"type": 1,
 			"title": "Jenkins",
 			"description": "Open-source continuous integration tool",
 			"categories": [
