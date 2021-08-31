@@ -179,7 +179,7 @@
 		{
 			"type": 1,
 			"title": "tiredofit/mongodb-backup",
-			"description": "tiredofit/mongodb-backup",
+			"description": "Author : https://github.com/tiredofit/docker-mongodb-backup",
 			"categories": [
 				"database"
 			],
