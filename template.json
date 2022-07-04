@@ -1,7 +1,6 @@
 {
 	"version": "2",
-	"templates": [
-		{
+	"templates": [{
 			"type": 1,
 			"title": "Registry",
 			"description": "Docker image registry",
@@ -189,37 +188,36 @@
 			"volumes": [{
 				"container": "/backups"
 			}],
-			"env": [
-				{
+			"env": [{
 					"label": "DB_HOST",
 					"name": "DB_HOST",
-					"description":"Server Hostname e.g localhost/ip"
+					"description": "Server Hostname e.g localhost/ip"
 				},
 				{
 					"label": "DB_PORT",
 					"name": "DB_PORT",
-					"description":"mongo default port: 27017"
+					"description": "mongo default port: 27017"
 				},
 				{
 					"label": "DB_USER",
 					"name": "DB_USER",
-					"description":"DB Username"
+					"description": "DB Username"
 				},
 				{
 					"label": "DB_PASS",
 					"name": "DB_PASS",
-					"description":"DB Password"
+					"description": "DB Password"
 				},
 				{
 					"label": "DB_DUMP_FREQ",
 					"name": "DB_DUMP_FREQ",
-					"description":"How often to do a dump, in minutes. Defaults to 1440 minutes, or once per day."
+					"description": "How often to do a dump, in minutes. Defaults to 1440 minutes, or once per day."
 				},
 				{
 					"label": "DB_CLEANUP_TIME",
 					"name": "DB_CLEANUP_TIME",
-					"default":"1440",
-					"description":"How often to do a clean up, in minutes. Defaults to 1440 minutes, or once per day."
+					"default": "1440",
+					"description": "How often to do a clean up, in minutes. Defaults to 1440 minutes, or once per day."
 				}
 			]
 		},
@@ -305,8 +303,7 @@
 			"restart_policy": "unless-stopped",
 			"title": "Yacht",
 			"type": 1,
-			"volumes": [
-				{
+			"volumes": [{
 					"bind": "yacht",
 					"container": "/config"
 				},
@@ -323,8 +320,7 @@
 				"Tools"
 			],
 			"description": "This container contains OpenVPN and Deluge with a configuration where Deluge is running only when OpenVPN has an active tunnel. It bundles configuration files for many popular VPN providers to make the setup easier.",
-			"env": [
-				{
+			"env": [{
 					"default": "1001",
 					"label": "PUID",
 					"name": "PUID"
@@ -358,8 +354,7 @@
 			"restart_policy": "unless-stopped",
 			"title": "Deluge openvpn",
 			"type": 1,
-			"volumes": [
-				{
+			"volumes": [{
 					"bind": "/etc/localtime",
 					"container": "/etc/localtime"
 				},
@@ -391,12 +386,10 @@
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Proxy Manager",
 			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/Nginx-Proxy",
-					"container": "/config"
-				}
-			]
+			"volumes": [{
+				"bind": "/portainer/Files/AppData/Config/Nginx-Proxy",
+				"container": "/config"
+			}]
 		},
 		{
 			"categories": [
@@ -404,8 +397,7 @@
 				"Tools"
 			],
 			"description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
-			"env": [
-				{
+			"env": [{
 					"label": "INTERFACE",
 					"name": "INTERFACE",
 					"set": "eth0"
@@ -433,12 +425,10 @@
 			"restart_policy": "unless-stopped",
 			"title": "OpenVPN Access Server",
 			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/OpenVPN-AS",
-					"container": "/config"
-				}
-			]
+			"volumes": [{
+				"bind": "/portainer/Files/AppData/Config/OpenVPN-AS",
+				"container": "/config"
+			}]
 		},
 		{
 			"type": 1,
@@ -455,7 +445,7 @@
 				"443/tcp"
 			],
 			"volumes": [{
-				"bind":"/var/www/php-httpd",
+				"bind": "/var/www/php-httpd",
 				"container": "/var/www/html"
 			}]
 		},
@@ -468,18 +458,19 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
-			"image": jypsolution/php7.3.24-apache",
+			"image": "jypsolution / php7 .3 .24 - apache ",
 			"ports": [
 				"80/tcp",
 				"443/tcp"
 			],
 			"volumes": [{
-				"bind":"/var/www/html",
-				"container": "/var/www/html"
-			},
-				    {
-					    "container": "/etc/apache2"
-				    }]
+					"bind": "/var/www/html",
+					"container": "/var/www/html"
+				},
+				{
+					"container": "/etc/apache2"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -487,8 +478,7 @@
 			],
 			"name": "code-server",
 			"description": "Code-server is VS Code running on a remote server, accessible through the browser.",
-			"env": [
-				{
+			"env": [{
 					"default": "1000",
 					"label": "PUID",
 					"name": "PUID"
@@ -525,12 +515,10 @@
 			"restart_policy": "unless-stopped",
 			"title": "Code Server",
 			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/Code-Server",
-					"container": "/config"
-				}
-			]
+			"volumes": [{
+				"bind": "/portainer/Files/AppData/Config/Code-Server",
+				"container": "/config"
+			}]
 		},
 		{
 			"type": 1,
@@ -543,11 +531,10 @@
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/mysql.png",
 			"image": "jypsolution/mysql-backup",
 			"volumes": [{
-				"bind":"/var/db_backup",
+				"bind": "/var/db_backup",
 				"container": "/db"
 			}],
-			"env": [
-				{
+			"env": [{
 					"label": "DB_DUMP_TARGET",
 					"name": "DB_DUMP_TARGET",
 					"default": "/db"
@@ -555,32 +542,32 @@
 				{
 					"label": "DB_SERVER",
 					"name": "DB_SERVER",
-					"description":"Server Hostname e.g localhost/ip/container-name"
+					"description": "Server Hostname e.g localhost/ip/container-name"
 				},
 				{
 					"label": "DB_PORT",
 					"name": "DB_PORT",
-					"description":"3306"
+					"description": "3306"
 				},
 				{
 					"label": "DB_USER",
 					"name": "DB_USER",
-					"description":"DB Username"
+					"description": "DB Username"
 				},
 				{
 					"label": "DB_PASS",
 					"name": "DB_PASS",
-					"description":"DB Password"
+					"description": "DB Password"
 				},
 				{
 					"label": "DB_NAMES",
 					"name": "DB_NAMES",
-					"description":"DB Name, Empty will dump all the databases"
+					"description": "DB Name, Empty will dump all the databases"
 				},
 				{
 					"label": "DB_DUMP_CRON",
 					"name": "DB_DUMP_CRON",
-					"description":"Set the dump schedule using standard crontab syntax, a single line."
+					"description": "Set the dump schedule using standard crontab syntax, a single line."
 				}
 			]
 		},
@@ -594,16 +581,15 @@
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/phpmyadmin.png",
 			"image": "phpmyadmin/phpmyadmin",
-			"env": [
-				{
+			"env": [{
 					"label": "PMA_HOST",
 					"name": "PMA_HOST",
-					"description":"define address/host name of the MySQL server"
+					"description": "define address/host name of the MySQL server"
 				},
 				{
 					"label": "PMA_PORT",
 					"name": "PMA_PORT",
-					"description":"define port of the MySQL server"
+					"description": "define port of the MySQL server"
 				}
 			],
 			"ports": [
@@ -620,36 +606,35 @@
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/ssms.png",
 			"image": "mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-18.04",
-			"env": [
-				{
+			"env": [{
 					"label": "ACCEPT_EULA",
 					"name": "ACCEPT_EULA",
-					"description":"ACCEPT_EULA",
-					"default":"Y"
+					"description": "ACCEPT_EULA",
+					"default": "Y"
 				},
 				{
 					"label": "SA_PASSWORD",
 					"name": "SA_PASSWORD",
-					"description":"Password",
-					"default":""
+					"description": "Password",
+					"default": ""
 				},
 				{
 					"label": "MSSQL_PID",
 					"name": "MSSQL_PID",
-					"description":"<your_product_id | edition_name> (default: Developer)",
-					"default":""
+					"description": "<your_product_id | edition_name> (default: Developer)",
+					"default": ""
 				},
 				{
 					"label": "MSSQL_AGENT_ENABLED",
 					"name": "MSSQL_AGENT_ENABLED",
-					"default":"TRUE"
+					"default": "TRUE"
 				}
 			],
 			"ports": [
 				"1433:1433/tcp"
 			],
 			"volumes": [{
-				"bind":"/portainer/mssql-2019/data",
+				"bind": "/portainer/mssql-2019/data",
 				"container": "/var/opt/mssql/data"
 			}]
 		}
