@@ -458,7 +458,7 @@
 			],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/edwinpang/portainer_image/master/image/httpd.png",
-			"image": "jypsolution / php7 .3 .24 - apache ",
+			"image": "jypsolution/php7.3.24-apache",
 			"ports": [
 				"80/tcp",
 				"443/tcp"
