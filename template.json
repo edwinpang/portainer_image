@@ -466,9 +466,6 @@
 			"volumes": [{
 					"bind": "/var/www/html",
 					"container": "/var/www/html"
-				},
-				{
-					"container": "/etc/apache2"
 				}
 			]
 		},
