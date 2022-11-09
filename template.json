@@ -194,6 +194,11 @@
 					"description": "Server Hostname e.g localhost/ip"
 				},
 				{
+					"label": "DB_NAME",
+					"name": "DB_NAME",
+					"description": "Optional Field"
+				},
+				{
 					"label": "DB_PORT",
 					"name": "DB_PORT",
 					"description": "mongo default port: 27017"
