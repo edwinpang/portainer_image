@@ -512,13 +512,12 @@
 			"logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/code-server.png",
 			"platform": "linux",
 			"ports": [
-				"8443:8443/tcp"
+				"18443:8443/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"title": "Code Server",
 			"type": 1,
 			"volumes": [{
-				"bind": "/portainer/Files/AppData/Config/Code-Server",
 				"container": "/config"
 			}]
 		},
